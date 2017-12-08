@@ -1,0 +1,32 @@
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgb(255,173, 51);
+}
+
+a:link {
+  font-size: 32px;
+  font-family: Helvetica;
+  color: White;
+  text-decoration: none;
+  background: rgb(0, 204, 255);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+a:visited {
+  font-size: 32px;
+  font-family: Helvetica;
+  color: White;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 50px;
+  font-family: Helvetica;
+  color: White;
+}

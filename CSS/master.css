@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background: rgb(255, 173, 51);
+}
+
+.main {
+	font-size: 20px;
+	text-align: center;
+}
+
+.bottom-information {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.scoreboard {
+	padding: 20px;
+	margin: 20px;
+	font-family: Helvetica;
+	background: rgb(0, 204, 255);
+	border-radius: 20px;
+}
+
+h1 {
+	font-family: Impact;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.symbols {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

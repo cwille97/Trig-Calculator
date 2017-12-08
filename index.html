@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="CSS/master.css">
+	<meta charset="utf-8">
+	<title>Trigonometry Quiz</title>
+</head>
+
+<body onload="startTotalTimer(), startCurrentTimer()">
+	<div class="main">
+		<h1>Welcome to Trig Calculator</h1>
+		
+		<script src="Javascript/timer.js"></script>
+		<div class="total-timer">
+			<p id="total-timer-output"><b>0:00:00:00</b></p>
+		</div>
+
+		<div class="current-timer">
+			<p id="current-timer-output"><b>0:00:00:00</b></p>
+		</div>
+
+		<div id="question-div">
+
+			<p id="message">Question: <text id="question-text"></text></p>
+			<div id="clear">
+				<!-- <input type="text" id="input" /> -->
+				<input type = "text" id = "input"  onkeydown="if (event.keyCode == 13) document.getElementById('checkAnswerButton').click()" /> <!-- Adds functionality so that pressing enter will trigger the checkAnswerButton-->
+				<button id="checkAnswerButton" onclick="checkAnswer()">Check Answer</button>
+				<!-- <input type = "button" id = "checkAnswerButton" value = "Check Answer" onclick = "checkAnswer()" /> -->
+			</div>
+		</div>
+
+		<p id="answer"></p>
+		<p id="next-button"></p>
+		
+		<!-- <script src="Javascript/form.js"></script> -->
+		<script src="Javascript/answers.js"></script>
+
+
+		<div class="bottom-information" onload ="calculateScoreboard()">
+			<div class="scoreboard">
+				<p id="score">Scoreboard: </p>
+				<ul>
+					<li id="num-questions">Number of Questions: 1 </li>
+					<li id="num-correct">Number Correct: 0 </li>
+					<li id="num-incorrect">Number Incorrect: 0 </li>
+					<li id="percentage-correct">Percentage: 0% </li>
+				</ul>
+			</div>
+
+			<button onclick="insertSqrt();">√</button>
+
+			<button onclick="insertPi();">π</button>
+
+		</div>
+	</div>
+</body>
+
+</html>

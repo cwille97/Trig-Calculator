@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="CSS/customize.css">
+	<!-- <script type="text/javascript" src="Javascript/script.js"></script> -->
+	<meta charset="utf-8">
+	<title>Trigonometry Quiz</title>
+  <script src="Javascript/form.js"></script>
+  <script src="Javascript/answers.js"></script>
+</head>
+
+<body>
+  <h1>Customize your Quiz:</h1>
+  <form id="customize" name="customize" method="post" action="form.js">
+    <p>How many questions would you like your quiz to be?</p>
+    <select id="numQuestionsDesired" name="numQuestionsDesired">
+      <option value=5>5</option>
+      <option value=10>10</option>
+      <option value=15>15</option>
+      <option value=20>20</option>
+      <option value=25>25</option>
+      <option value=30>30</option>
+      <option value=35>35</option>
+      <option value=40>40</option>
+      <option value=50>50</option>
+    </select>
+    <p id="checkbox-description">Check off the type of questions you would like to be asked:
+    <br/>
+    <input type="checkbox" name="sine" value="sine" checked="checked" id="sine"/> Sine
+    <input type="checkbox" name="cosine" value="cosine" id="cosine"/> Cosine
+    <input type="checkbox" name="tangent" value="tangent" id="tangent"/> Tangent
+    <input type="checkbox" name="secant" value="secant" id="secant"/> Secant
+    <input type="checkbox" name="cosecant" value="cosecant" id="cosecant"/> Cosecant
+    <input type="checkbox" name="cotangent" value="cotangent" id="cotangent"/> Cotangent
+    </p>
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+
+</html>
