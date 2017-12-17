@@ -30,27 +30,27 @@ if (sessionStorage.getItem("true_sine") == "true") {
 }
 
 if (sessionStorage.getItem("true_cosine") == "true") {
-  answers_array = answers_array.concat(cosine_answers); 
+  answers_array = answers_array.concat(cosine_answers);
   questions_array = questions_array.concat(cosine_questions);
 }
 
 if (sessionStorage.getItem("true_tangent") == "true") {
-  answers_array = answers_array.concat(tangent_answers); 
+  answers_array = answers_array.concat(tangent_answers);
   questions_array = questions_array.concat(tangent_questions);
 }
 
 if (sessionStorage.getItem("true_secant") == "true") {
-  answers_array = answers_array.concat(secant_answers); 
+  answers_array = answers_array.concat(secant_answers);
   questions_array = questions_array.concat(secant_questions);
 }
 
 if (sessionStorage.getItem("true_cosecant") == "true") {
-  answers_array = answers_array.concat(cosecant_answers); 
+  answers_array = answers_array.concat(cosecant_answers);
   questions_array = questions_array.concat(cosecant_questions);
 }
 
 if (sessionStorage.getItem("true_cotangent") == "true") {
-  answers_array = answers_array.concat(cotangent_answers); 
+  answers_array = answers_array.concat(cotangent_answers);
   questions_array = questions_array.concat(cotangent_questions);
 }
 
@@ -77,7 +77,11 @@ function checkAnswer() {
 document.getElementById("question-text").innerHTML = questions_array[ranNum];
 
 function nextButton() {
+  ranNumTemp = ranNum; // creating a temp variable to store the ranNum value before a new ranNum is generated
   ranNum = Math.floor(Math.random() * (questions_array.length));
+  while (ranNum == ranNumTemp) { // If the newly generated ranNum is the same value as the previous one
+    ranNum = Math.floor(Math.random() * (questions_array.length)); // Continue generating new ranNum's until a different one is generated 
+  }
   document.getElementById("question-text").innerHTML = questions_array[ranNum];
   document.getElementById("next-button").innerHTML = "";
   // document.getElementById("clear").innerHTML = "<input type='text' id='input'/><button onclick='checkAnswer()'>Check Answer</button>";
@@ -161,6 +165,3 @@ function checkInfo() {
         return true;
       }
     }
-
-
-
