@@ -4,3 +4,11 @@ Add score page functionality
 Make next question more clear
 Enter button works as check answer and next question
 Change up styling
+
+
+Bugs:
+
+1. The first time upon starting a new quiz, if you click Next Question before submitting an answer, no warning is administered. After this first answer is submitted and you click Next Question,
+    it either works as intended or administers the correct warning.
+
+2. Using enter to check answer only works the first time. Has not been implemented yet for next question

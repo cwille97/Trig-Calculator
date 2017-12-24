@@ -56,6 +56,11 @@ if (sessionStorage.getItem("true_cotangent") == "true") {
 
 var ranNum = Math.floor(Math.random() * (questions_array.length));
 
+function AnswerQuestionFirst() {
+  alert("Please answer the questsion before attempting to move on");
+}
+
+
 
 function checkAnswer() {
   var receivedAnswer = input.value;
@@ -86,6 +91,7 @@ function nextButton() {
   // document.getElementById("clear").innerHTML = "<input type='text' id='input'/><button onclick='checkAnswer()'>Check Answer</button>";
   document.getElementById("clear").innerHTML = "<input type='text' id='input'  onkeydown='if (event.keyCode == 13) document.getElementById('checkAnswerButton').click()'/><button id='checkAnswerButton' onclick='checkAnswer()'>Check Answer</button>";
   document.getElementById("answer").innerHTML = "";
+  document.getElementById("next-button").innerHTML = "<next-button onclick=AnswerQuestionFirst()>Next Question</button"
   currentReset();
   numQuestions++;
   calculateScoreboard();
@@ -93,7 +99,6 @@ function nextButton() {
     window.location.href = "score.html";
   }
 }
-
 
 function insertSqrt() {
   var text = document.getElementById("input");
