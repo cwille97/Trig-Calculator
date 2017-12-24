@@ -57,7 +57,6 @@ if (sessionStorage.getItem("true_cotangent") == "true") {
 var ranNum = Math.floor(Math.random() * (questions_array.length));
 
 
-
 function checkAnswer() {
   var receivedAnswer = input.value;
   if (receivedAnswer == answers_array[ranNum]) {
@@ -80,10 +79,10 @@ function nextButton() {
   ranNumTemp = ranNum; // creating a temp variable to store the ranNum value before a new ranNum is generated
   ranNum = Math.floor(Math.random() * (questions_array.length));
   while (ranNum == ranNumTemp) { // If the newly generated ranNum is the same value as the previous one
-    ranNum = Math.floor(Math.random() * (questions_array.length)); // Continue generating new ranNum's until a different one is generated 
+    ranNum = Math.floor(Math.random() * (questions_array.length)); // Continue generating new ranNum's until a different one is generated
   }
   document.getElementById("question-text").innerHTML = questions_array[ranNum];
-  document.getElementById("next-button").innerHTML = "";
+  // document.getElementById("next-button").innerHTML = "";
   // document.getElementById("clear").innerHTML = "<input type='text' id='input'/><button onclick='checkAnswer()'>Check Answer</button>";
   document.getElementById("clear").innerHTML = "<input type='text' id='input'  onkeydown='if (event.keyCode == 13) document.getElementById('checkAnswerButton').click()'/><button id='checkAnswerButton' onclick='checkAnswer()'>Check Answer</button>";
   document.getElementById("answer").innerHTML = "";

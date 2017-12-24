@@ -38,3 +38,12 @@ ul {
 	align-items: center;
 	justify-content: center;
 }
+
+.nextButton {
+	color: white;
+	background: rgb(0, 204, 255);
+	font-family: Helvetica;
+	border-radius: 20px;
+	padding: 20px;
+	margin: 20px;
+}
