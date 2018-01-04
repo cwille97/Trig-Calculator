@@ -1,6 +1,13 @@
+This website is basically a little quiz I made for memorizing the unit circle. It uses HTML, CSS, and Javascipt.
+The code here is mostly my own with the exception of the timer, and the addElement and removeElement methods.
+
+
+
+
+
 Things to work on:
 
-Change up styling
+
 
 
 Bugs:
@@ -9,3 +16,5 @@ Bugs:
     it either works as intended or administers the correct warning.
 
 2. Using enter to check answer only works the first time. Has not been implemented yet for next question
+
+3. Timer continues when a question has been answered but the next question has not been displayed yet. 

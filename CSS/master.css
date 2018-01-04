@@ -51,7 +51,7 @@ ul {
 	margin: 20px;
 }
 
-#percentage-correct {
+#percentage-correct { 
 	font-size: 80px;
 }
 
@@ -64,6 +64,6 @@ ul {
 	text-align: center;
 }
 
-#num-questions, #num-correct, #num-incorrect {	
+#num-questions, #num-correct, #num-incorrect {
 	font-size: 30px;
 }

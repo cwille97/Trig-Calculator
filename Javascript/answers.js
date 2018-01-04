@@ -23,7 +23,8 @@ var numIncorrect = 0;
 var numQuestions = 0;
 var maxQuestions = 0;
 var numQuestionsDesired = sessionStorage.getItem('numQuestionsDesired'); // for localstorage info see: https://www.w3schools.com/html/html5_webstorage.asp
-var finalTime = 0; // The total time your quiz took to complete
+var finalTime; // A placeholder to record the final time taken on the quiz
+
 
 if (sessionStorage.getItem("true_sine") == "true") {
   answers_array = answers_array.concat(sine_answers);
@@ -97,7 +98,7 @@ function nextButton() {
   numQuestions++;
   calculateScoreboard();
   if (numQuestions >= numQuestionsDesired) {
-    transitionScore();
+    transitionScore(); // Transitions index.html from quiz mode to score mode
   }
 }
 
@@ -173,15 +174,15 @@ function checkInfo() {
     }
 
   function transitionScore() { //Transitions the index.html page to display the score after completing a quiz
-    finalTime = document.getElementById("total-timer-output");
+    totalStop();
     document.getElementById("h1").innerHTML = "Your quiz results:" //Changes the heading from welcome to trig calculator to your quiz results
-    document.getElementById("total-timer-output").innerHTML = finalTime; // Displays the total time as a static number
-    document.getElementById("current-timer-output").innerHTML = ""; // Hides current timer
+    document.getElementById("total-timer-output").innerHTML = ""
     document.getElementById("question-div").innerHTML = ""; // Hides the question
     document.getElementById("answer").innerHTML = ""; // Hides the answer box
     removeElement("next-button"); // Removes the next button
     removeElement("insertSqrt"); // Removes the Square Root button
     removeElement("insertPi"); // Removes the Pi button
+    removeElement("current-timer-output"); // Removes current timer
     addElement("new-quiz", "button", "new-quiz-button", "<button id='new-quiz-button' onclick='newQuiz();';>Click here to take another quiz!</button>"); // Adds the new quiz button
   }
 
