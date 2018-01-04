@@ -18,7 +18,23 @@
 </head>
 
 <body>
-	<h1>Your quiz results:</h1>
+	<Script>
+		function populateScorepage() {
+			document.getElementById("num-questions") = sessionStorage.getItem("num-questions");
+			document.getElementById("num-correct") = sessionStorage.getItem("num-correct");
+			document.getElementById("num-incorrect") = sessionStorage.getItem("num-incorrect");
+			document.getElementById("percentage-correct") = sessionStorage.getItem("percentage-correct");
+		}
+	</script>
+	<h1 id="quizResults">Your quiz results:</h1>
+	<div class="scoreboard" onload="populateScorepage">
+		<ul>
+			<li id="num-questions"></li>
+			<li id="num-correct"></li>
+			<li id="num-incorrect"></li>
+			<li id="percentage-correct"></li>
+		</ul>
+	</div>
 </body>
 
 </html>

@@ -2,5 +2,23 @@ body {
 	margin: 0;
 	border: 0;
 	padding: 0;
-	background: rgb(255, 173, 51);
+	background: rgb(0, 40, 77);
+	color: White;
+}
+
+.customize {
+	margin: 20px;
+	border: 20px;
+	padding: 0px;
+	border-radius: 20px;
+	background: rgb(128, 128, 128);
+	color: White
+	display: flex;
+  align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.customizeHeading {
+	text-align: center;
 }

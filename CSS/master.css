@@ -2,11 +2,13 @@ body {
 	margin: 0;
 	border: 0;
 	padding: 0;
-	background: rgb(255, 173, 51);
+	background: rgb(0, 40, 77);
+	color: White;
 }
 
 .main {
 	font-size: 20px;
+	color: White;
 	text-align: center;
 }
 
@@ -21,8 +23,9 @@ body {
 	padding: 20px;
 	margin: 20px;
 	font-family: Helvetica;
-	background: rgb(0, 204, 255);
+	background: rgb(128, 128, 128);
 	border-radius: 20px;
+	text-align: center;
 }
 
 h1 {
@@ -41,9 +44,26 @@ ul {
 
 .nextButton {
 	color: white;
-	background: rgb(0, 204, 255);
+	background: rgb(128, 128, 128);
 	font-family: Helvetica;
 	border-radius: 20px;
 	padding: 20px;
 	margin: 20px;
+}
+
+#percentage-correct {
+	font-size: 80px;
+}
+
+#score {
+	font-size: 40px;
+}
+
+#quizResults {
+	font-size: 50px;
+	text-align: center;
+}
+
+#num-questions, #num-correct, #num-incorrect {	
+	font-size: 30px;
 }

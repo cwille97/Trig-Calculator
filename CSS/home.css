@@ -5,7 +5,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgb(255,173, 51);
+  background: rgb(0, 40, 77);
+  color: White;
 }
 
 a:link {
@@ -13,7 +14,7 @@ a:link {
   font-family: Helvetica;
   color: White;
   text-decoration: none;
-  background: rgb(0, 204, 255);
+  background: rgb(128, 128, 128);
   padding: 10px;
   border-radius: 20px;
 }

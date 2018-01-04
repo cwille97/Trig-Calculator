@@ -9,7 +9,7 @@
 
 <body onload="startTotalTimer(), startCurrentTimer()">
 	<div class="main">
-		<h1>Welcome to Trig Calculator</h1>
+		<h1 id="h1">Welcome to Trig Calculator</h1>
 
 		<script src="Javascript/timer.js"></script>
 		<div class="total-timer">
@@ -50,11 +50,13 @@
 					<li id="num-incorrect">Number Incorrect: 0 </li>
 					<li id="percentage-correct">Percentage: 0% </li>
 				</ul>
+				<div id="new-quiz">
+				</div>
 			</div>
 
-			<button onclick="insertSqrt();">√</button>
+			<button id="insertSqrt" onclick="insertSqrt();">√</button>
 
-			<button onclick="insertPi();">π</button>
+			<button id="insertPi" onclick="insertPi();">π</button>
 
 		</div>
 	</div>
