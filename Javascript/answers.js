@@ -9,13 +9,13 @@ var cosine_questions = ["Cos 0", "Cos π/6", "Cos π/4", "Cos π/3", "Cos π/2",
 var tangent_answers = ["0", "√3/3", "1", "√3", "undefined", "-√3", "-1", "-√3/3", "0", "√3/3", "1", "√3", "undefined", "-√3", "-1", "-√3/3", "0"];
 var tangent_questions = ["Tan 0", "Tan π/6", "Tan π/4", "Tan π/3", "Tan π/2", "Tan 2π/3", "Tan 3π/4", "Tan 5π/6", "Tan π", "Tan 7π/6", "Tan 5π/4",
 "Tan 4π/3", "Tan 3π/2", "Tan 5π/3", "Tan 7π/4", "Tan 11π/6"];
-var secant_answers = ["1", "2√3/3", "√2", "2", "undefined", "-2", "-√2", "-2√3/3", "-1", "-2√3/3", "-√2", "-2", "undefined", "2", "√2", "2√3/3", "1"];
+var secant_answers = ["1", "2√3/3", "√2", "2", "undefined", "-2", "-√2", "-2√3/3", "-1", "-2√3/3", "-√2", "-2", "undefined", "2", "√2", "2√3/3"];
 var secant_questions = ["Sec 0", "Sec π/6", "Sec π/4", "Sec π/3", "Sec π/2", "Sec 2π/3", "Sec 3π/4", "Sec 5π/6", "Sec π", "Sec 7π/6", "Sec 5π/4",
 "Sec 4π/3", "Sec 3π/2", "Sec 5π/3", "Sec 7π/4", "Sec 11π/6"];
-var cosecant_answers = ["undefined", "2", "√2", "2√3/3", "1", "2√3/3", "√2", "2", "undefined", "-2", "-√2", "-2√3/3", "-1", "-2√3/3", "-1", "-2√3/3", "-√2", "-2", "undefined"];
+var cosecant_answers = ["undefined", "2", "√2", "2√3/3", "1", "2√3/3", "√2", "2", "undefined", "-2", "-√2", "-2√3/3", "-1", "-2√3/3", "-1", "-√2", "-2",];
 var cosecant_questions = ["Csc 0", "Csc π/6", "Csc π/4", "Csc π/3", "Csc π/2", "Csc 2π/3", "Csc 3π/4", "Csc 5π/6", "Csc π", "Csc 7π/6", "Csc 5π/4",
 "Csc 4π/3", "Csc 3π/2", "Csc 5π/3", "Csc 7π/4", "Csc 11π/6"];
-var cotangent_answers = ["undefined", "√3", "1", "√3/3", "0", "-√3/3", "-1", "-√3", "undefined", "√3", "1", "√3/3", "0", "-√3/3", "-1", "-√3", "undefined"];
+var cotangent_answers = ["undefined", "√3", "1", "√3/3", "0", "-√3/3", "-1", "-√3", "undefined", "√3", "1", "√3/3", "0", "-√3/3", "-1", "-√3"];
 var cotangent_questions = ["Cot 0", "Cot π/6", "Cot π/4", "Cot π/3", "Cot π/2", "Cot 2π/3", "Cot 3π/4", "Cot 5π/6", "Cot π", "Cot 7π/6", "Cot 5π/4",
 "Cot 4π/3", "Cot 3π/2", "Cot 5π/3", "Cot 7π/4", "Cot 11π/6"];
 var numCorrect = 0;
@@ -66,14 +66,15 @@ function AnswerQuestionFirst() {
 
 function checkAnswer() {
   var receivedAnswer = input.value;
-  if (receivedAnswer == answers_array[ranNum]) {
+  var correctAnswer = answers_array[ranNum];
+  if (receivedAnswer == correctAnswer) {
     document.getElementById("answer").innerHTML = "Correct!";
-    document.getElementById("next-button").innerHTML = "<next-button onclick=nextButton()>Next Question</button";
+    addElement("bottom-information", "button", "next-button", "<button id='next-button' onclick='nextButton();'>Next Question</button>");
     document.getElementById("clear").innerHTML = "";
     numCorrect++;
   } else {
     document.getElementById("answer").innerHTML = "Incorrect!";
-    document.getElementById("next-button").innerHTML = "<next-button onclick=nextButton()>Next Question</button";
+    addElement("bottom-information", "button", "next-button", "<button id='next-button' onclick='nextButton();'>Next Question</button>");
     document.getElementById("clear").innerHTML = "";
     numIncorrect++;
   }
@@ -93,13 +94,14 @@ function nextButton() {
   // document.getElementById("clear").innerHTML = "<input type='text' id='input'/><button onclick='checkAnswer()'>Check Answer</button>";
   document.getElementById("clear").innerHTML = "<input type='text' id='input'  onkeydown='if (event.keyCode == 13) document.getElementById('checkAnswerButton').click()'/><button id='checkAnswerButton' onclick='checkAnswer()'>Check Answer</button>";
   document.getElementById("answer").innerHTML = "";
-  document.getElementById("next-button").innerHTML = "<next-button onclick=AnswerQuestionFirst()>Next Question</button"
+  // document.getElementById("next-button").innerHTML = "<next-button onclick=AnswerQuestionFirst()>Next Question</button"
   currentReset();
   numQuestions++;
   calculateScoreboard();
   if (numQuestions >= numQuestionsDesired) {
     transitionScore(); // Transitions index.html from quiz mode to score mode
   }
+  removeElement("next-button");
 }
 
 function insertSqrt() {
@@ -184,6 +186,7 @@ function checkInfo() {
     removeElement("insertPi"); // Removes the Pi button
     removeElement("current-timer-output"); // Removes current timer
     addElement("new-quiz", "button", "new-quiz-button", "<button id='new-quiz-button' onclick='newQuiz();';>Click here to take another quiz!</button>"); // Adds the new quiz button
+
   }
 
   function removeElement(elementId) { // Source: https://www.abeautifulsite.net/adding-and-removing-elements-on-the-fly-using-javascript
